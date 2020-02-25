@@ -10,7 +10,7 @@ const IndexPage = () => {
     let [text, setText] = useState('');
     let [counter, setCounter] = useState(0);
 
-    const textArray = 'My name is Sean Mee I am a Full Stack Web Developer Living in Southern California Who Specializes in JavaScript'.split('');
+    const textArray = 'My name is Sean Mee I am a Full Stack Web Developer Living in Southern California Specializing in JavaScript'.split('');
 
 
     useEffect(() => {
