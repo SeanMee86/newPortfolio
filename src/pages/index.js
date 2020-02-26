@@ -46,8 +46,9 @@ const IndexPage = () => {
 
                 const addLine2 = setInterval(() => {
                     newLine = newLine + text2Array[counter];
+                    if(text1Ref.current === null) clearInterval(addLine2);
                     addLine({
-                        line1: text1Ref.current.innerText,
+                        line1: text1Ref.current !== null ? text1Ref.current.innerText : '',
                         line2: newLine
                     });
                     counter++;
@@ -59,9 +60,10 @@ const IndexPage = () => {
 
                         const addLine3 = setInterval(() => {
                             newLine = newLine + text3Array[counter];
+                            if(text1Ref.current === null) clearInterval(addLine3);
                             addLine({
-                                line1: text1Ref.current.innerText,
-                                line2: text2Ref.current.innerText,
+                                line1: text1Ref.current !== null ? text1Ref.current.innerText : '',
+                                line2: text2Ref.current !== null ? text2Ref.current.innerText : '',
                                 line3: newLine
                             });
                             counter++;
@@ -73,10 +75,11 @@ const IndexPage = () => {
 
                                 const addLine4 = setInterval(() => {
                                     newLine = newLine + text4Array[counter];
+                                    if(text1Ref.current === null) clearInterval(addLine3);
                                     addLine({
-                                        line1: text1Ref.current.innerText,
-                                        line2: text2Ref.current.innerText,
-                                        line3: text3Ref.current.innerText,
+                                        line1: text1Ref.current !== null ? text1Ref.current.innerText : '',
+                                        line2: text2Ref.current !== null ? text2Ref.current.innerText : '',
+                                        line3: text3Ref.current !== null ? text3Ref.current.innerText : '',
                                         line4: newLine
                                     });
                                     counter++;
