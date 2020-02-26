@@ -3,6 +3,7 @@ import indexStyles from './index.module.scss'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import profilePic from '../images/sean-mee-min.jpg.webp';
 
 const IndexPage = () => {
 
@@ -101,6 +102,7 @@ const IndexPage = () => {
         <Layout>
             <SEO title="Home" />
             <div className={indexStyles.container}>
+                <img className={indexStyles.portrait} src={profilePic} alt="Photograph of Web Developer Sean Mee"/>
                 <p ref={text1Ref}>{text.line1}</p>
                 <p ref={text2Ref}>{text.line2}</p>
                 <p ref={text3Ref}>{text.line3}</p>
