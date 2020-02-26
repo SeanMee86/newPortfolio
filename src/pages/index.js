@@ -6,17 +6,17 @@ import SEO from "../components/seo"
 
 const IndexPage = () => {
 
-    const text1Array = 'My name is Sean Mee'.split('');
-    const text2Array = 'I am a Full Stack Web Developer'.split('');
-    const text3Array = 'Living in Southern California'.split('');
-    const text4Array = 'Specializing in JavaScript'.split('');
-
     const [text, setText] = useState({
         line1: '',
         line2: '',
         line3: '',
         line4: ''
     });
+
+    const text1Array = 'My name is Sean Mee'.split('');
+    const text2Array = 'I am a Full Stack Web Developer'.split('');
+    const text3Array = 'Living in Southern California'.split('');
+    const text4Array = 'Specializing in JavaScript'.split('');
 
     const text1Ref = useRef();
     const text2Ref = useRef();
