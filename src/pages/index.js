@@ -28,11 +28,13 @@ const IndexPage = () => {
         setText(obj);
     };
 
+    let lineArray = [];
+
     const typeWriter = () => {
         let newLine = '';
         let counter = 0;
 
-        const addLine1 = setInterval(() => {
+        lineArray[0] = setInterval(() => {
             newLine = newLine + text1Array[counter];
             addLine({
                 line1: newLine
@@ -40,52 +42,49 @@ const IndexPage = () => {
             counter++;
 
             if(counter >= text1Array.length){
-                clearInterval(addLine1);
+                clearInterval(lineArray[0]);
                 newLine = '';
                 counter = 0;
 
-                const addLine2 = setInterval(() => {
+                lineArray[1] = setInterval(() => {
                     newLine = newLine + text2Array[counter];
-                    if(text1Ref.current === null) clearInterval(addLine2);
                     addLine({
-                        line1: text1Ref.current !== null ? text1Ref.current.innerText : '',
+                        line1: text1Ref.current.innerText,
                         line2: newLine
                     });
                     counter++;
 
                     if(counter >= text2Array.length){
-                        clearInterval(addLine2);
+                        clearInterval(lineArray[1]);
                         newLine = '';
                         counter = 0;
 
-                        const addLine3 = setInterval(() => {
+                        lineArray[2] = setInterval(() => {
                             newLine = newLine + text3Array[counter];
-                            if(text1Ref.current === null) clearInterval(addLine3);
                             addLine({
-                                line1: text1Ref.current !== null ? text1Ref.current.innerText : '',
-                                line2: text2Ref.current !== null ? text2Ref.current.innerText : '',
+                                line1: text1Ref.current.innerText,
+                                line2: text2Ref.current.innerText,
                                 line3: newLine
                             });
                             counter++;
 
                             if (counter >= text3Array.length) {
-                                clearInterval(addLine3)
+                                clearInterval(lineArray[2]);
                                 newLine = '';
                                 counter = 0;
 
-                                const addLine4 = setInterval(() => {
+                                lineArray[3] = setInterval(() => {
                                     newLine = newLine + text4Array[counter];
-                                    if(text1Ref.current === null) clearInterval(addLine3);
                                     addLine({
-                                        line1: text1Ref.current !== null ? text1Ref.current.innerText : '',
-                                        line2: text2Ref.current !== null ? text2Ref.current.innerText : '',
-                                        line3: text3Ref.current !== null ? text3Ref.current.innerText : '',
+                                        line1: text1Ref.current.innerText,
+                                        line2: text2Ref.current.innerText,
+                                        line3: text3Ref.current.innerText,
                                         line4: newLine
                                     });
                                     counter++;
 
                                     if (counter >= text4Array.length) {
-                                        clearInterval(addLine4)
+                                        clearInterval(lineArray[3])
                                     }
                                 }, 50)
                             }
@@ -98,6 +97,7 @@ const IndexPage = () => {
 
     useEffect(() => {
         typeWriter()
+        return () => lineArray.forEach(line => clearInterval(line));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
