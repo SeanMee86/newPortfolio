@@ -5,12 +5,6 @@ module.exports = {
     author: `@seanmee1`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-web-font-loader`,
-      options: {
-        id: process.env.TYPEKIT_ID
-      }
-    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {

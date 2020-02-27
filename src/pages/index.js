@@ -34,6 +34,8 @@ const IndexPage = () => {
         let newLine = '';
         let counter = 0;
 
+        // Start Typing Line 1
+
         lineArray[0] = setInterval(() => {
             newLine = newLine + text1Array[counter];
             addLine({
@@ -45,6 +47,8 @@ const IndexPage = () => {
                 clearInterval(lineArray[0]);
                 newLine = '';
                 counter = 0;
+
+                // Start Typing Line 2
 
                 lineArray[1] = setInterval(() => {
                     newLine = newLine + text2Array[counter];
@@ -59,6 +63,8 @@ const IndexPage = () => {
                         newLine = '';
                         counter = 0;
 
+                        // Start Typing Line 3
+
                         lineArray[2] = setInterval(() => {
                             newLine = newLine + text3Array[counter];
                             addLine({
@@ -67,6 +73,8 @@ const IndexPage = () => {
                                 line3: newLine
                             });
                             counter++;
+
+                            // Start Typing Line 4
 
                             if (counter >= text3Array.length) {
                                 clearInterval(lineArray[2]);
@@ -96,7 +104,7 @@ const IndexPage = () => {
     };
 
     useEffect(() => {
-        typeWriter()
+        typeWriter();
         return () => lineArray.forEach(line => clearInterval(line));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
