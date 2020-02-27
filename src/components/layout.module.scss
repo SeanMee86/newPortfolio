@@ -2,6 +2,11 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 0 1.0875rem;
+
+  @media screen and (min-width: 768px) {
+    padding: 20px 1.0875rem 0;
+  }
 
   .content {
     flex-grow: 1;
