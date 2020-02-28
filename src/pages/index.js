@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react"
+import React, {useEffect, useState } from "react"
 import indexStyles from './index.module.scss'
 
 import Layout from "../components/layout"
@@ -18,11 +18,6 @@ const IndexPage = () => {
     const text2Array = 'I am a Full Stack Web Developer'.split('');
     const text3Array = 'Living in Southern California'.split('');
     const text4Array = 'Specializing in JavaScript'.split('');
-
-    const text1Ref = useRef();
-    const text2Ref = useRef();
-    const text3Ref = useRef();
-    const text4Ref = useRef();
 
     const addLine = (obj, newLine) => {
         setText(obj);
@@ -52,9 +47,11 @@ const IndexPage = () => {
 
                 lineArray[1] = setInterval(() => {
                     newLine = newLine + text2Array[counter];
-                    addLine({
-                        line1: text1Ref.current.innerText,
-                        line2: newLine
+                    addLine((prevState) => {
+                        return {
+                            ...prevState,
+                            line2: newLine
+                        }
                     });
                     counter++;
 
@@ -67,10 +64,11 @@ const IndexPage = () => {
 
                         lineArray[2] = setInterval(() => {
                             newLine = newLine + text3Array[counter];
-                            addLine({
-                                line1: text1Ref.current.innerText,
-                                line2: text2Ref.current.innerText,
-                                line3: newLine
+                            addLine((prevState) => {
+                                return {
+                                    ...prevState,
+                                    line3: newLine
+                                }
                             });
                             counter++;
 
@@ -83,11 +81,11 @@ const IndexPage = () => {
 
                                 lineArray[3] = setInterval(() => {
                                     newLine = newLine + text4Array[counter];
-                                    addLine({
-                                        line1: text1Ref.current.innerText,
-                                        line2: text2Ref.current.innerText,
-                                        line3: text3Ref.current.innerText,
-                                        line4: newLine
+                                    addLine((prevState) => {
+                                        return {
+                                            ...prevState,
+                                            line4: newLine
+                                        }
                                     });
                                     counter++;
 
@@ -114,10 +112,10 @@ const IndexPage = () => {
             <SEO title="Home" />
             <div className={indexStyles.container}>
                 <img className={indexStyles.portrait} src={profilePic} alt="Photograph of Web Developer Sean Mee"/>
-                <p ref={text1Ref}>{text.line1}</p>
-                <p ref={text2Ref}>{text.line2}</p>
-                <p ref={text3Ref}>{text.line3}</p>
-                <p ref={text4Ref}>{text.line4}</p>
+                <p>{text.line1}</p>
+                <p>{text.line2}</p>
+                <p>{text.line3}</p>
+                <p>{text.line4}</p>
             </div>
         </Layout>
     )
