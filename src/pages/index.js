@@ -16,7 +16,7 @@ const IndexPage = () => {
         'Specializing in JavaScript'
     ];
 
-    const typeWriter = new TypeWriter(linesArray);
+    const typeWriter = new TypeWriter(linesArray, 70);
 
     useEffect(() => {
         typeWriter.createLines();

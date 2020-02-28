@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const TypeWriter = function(array) {
+const TypeWriter = function(array, timeDelay) {
     this.newLine = '';
     this.counter = 0;
     this.arrayCounter = 1;
@@ -32,7 +32,7 @@ const TypeWriter = function(array) {
                     this.createLines();
                 }
             }
-        }, 50);
+        }, timeDelay);
     };
 
     this.printText = () => {
