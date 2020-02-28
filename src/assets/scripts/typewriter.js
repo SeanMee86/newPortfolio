@@ -1,35 +1,53 @@
-const TypeWriter = function() {
+import React, {useState} from "react";
+
+const TypeWriter = function(array) {
     this.newLine = '';
     this.counter = 0;
     this.arrayCounter = 1;
+    this.linesArray = array.map(line => line.split(''));
 
-    this.intervalRef = () => {
-        return this.lineInterval
-    };
+    this.textObj = {};
+    this.linesArray.forEach((line, ind) => this.textObj[`line${ind+1}`] = '');
+    const [text, setText] = useState(this.textObj);
 
-    this.typeLines = (array, setState) => {
-        this.lineInterval = setInterval(() => {
-            this.newLine = this.newLine + array[this.arrayCounter - 1][this.counter];
+    this.typeLines = () => {
+        this.typingInterval = setInterval(() => {
+            this.newLine = this.newLine + this.linesArray[this.arrayCounter - 1][this.counter];
 
-            setState((prevState) => {
+            setText((prevState) => {
                 return {
                     ...prevState,
-                    ['line' + this.arrayCounter]: this.newLine
+                    [`line${this.arrayCounter}`]: this.newLine
                 }
             });
 
             this.counter++;
 
-            if (this.counter >= array[this.arrayCounter - 1].length) {
-                clearInterval(this.lineInterval);
-                if(this.arrayCounter < array.length) {
+            if (this.counter >= this.linesArray[this.arrayCounter - 1].length) {
+                clearInterval(this.typingInterval);
+                if(this.arrayCounter < this.linesArray.length) {
                     this.newLine = '';
                     this.counter = 0;
                     this.arrayCounter++;
-                    this.typeLines(array, setState);
+                    this.typeLines();
                 }
             }
         }, 50);
+    };
+
+    this.printText = () => {
+        return text;
+    };
+
+    this.createLines = () => {
+        return this.linesArray
+            .map((line,ind) => (
+                <p key={ind}>{this.printText()[`line${ind+1}`]}</p>
+            ));
+    };
+
+    this.intervalRef = () => {
+        return this.typingInterval
     };
 };
 
