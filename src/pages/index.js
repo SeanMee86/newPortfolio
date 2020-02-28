@@ -7,6 +7,12 @@ import profilePic from '../images/sean-mee-min.jpg.webp';
 
 const IndexPage = () => {
 
+    useEffect(() => {
+        typeWriter();
+        return () => clearInterval(lineInterval);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     const [text, setText] = useState({
         line1: '',
         line2: '',
@@ -19,93 +25,44 @@ const IndexPage = () => {
     const text3Array = 'Living in Southern California'.split('');
     const text4Array = 'Specializing in JavaScript'.split('');
 
-    const addLine = (obj, newLine) => {
-        setText(obj);
-    };
+    const linesArray = [
+        text1Array,
+        text2Array,
+        text3Array,
+        text4Array
+    ];
 
-    let lineArray = [];
+    let lineInterval;
 
     const typeWriter = () => {
         let newLine = '';
         let counter = 0;
+        let arrayCounter = 1;
 
-        // Start Typing Line 1
+        const intervalTrigger = () => {
+            lineInterval = setInterval(() => {
+                newLine = newLine + linesArray[arrayCounter - 1][counter];
+                setText((prevState) => {
+                    return {
+                        ...prevState,
+                        ['line' + arrayCounter]: newLine
+                    }
+                });
+                counter++;
 
-        lineArray[0] = setInterval(() => {
-            newLine = newLine + text1Array[counter];
-            addLine({
-                line1: newLine
-            }, newLine);
-            counter++;
-
-            if(counter >= text1Array.length){
-                clearInterval(lineArray[0]);
-                newLine = '';
-                counter = 0;
-
-                // Start Typing Line 2
-
-                lineArray[1] = setInterval(() => {
-                    newLine = newLine + text2Array[counter];
-                    addLine((prevState) => {
-                        return {
-                            ...prevState,
-                            line2: newLine
-                        }
-                    });
-                    counter++;
-
-                    if(counter >= text2Array.length){
-                        clearInterval(lineArray[1]);
+                if (counter >= linesArray[arrayCounter - 1].length) {
+                    clearInterval(lineInterval);
+                    if(arrayCounter < linesArray.length) {
                         newLine = '';
                         counter = 0;
-
-                        // Start Typing Line 3
-
-                        lineArray[2] = setInterval(() => {
-                            newLine = newLine + text3Array[counter];
-                            addLine((prevState) => {
-                                return {
-                                    ...prevState,
-                                    line3: newLine
-                                }
-                            });
-                            counter++;
-
-                            // Start Typing Line 4
-
-                            if (counter >= text3Array.length) {
-                                clearInterval(lineArray[2]);
-                                newLine = '';
-                                counter = 0;
-
-                                lineArray[3] = setInterval(() => {
-                                    newLine = newLine + text4Array[counter];
-                                    addLine((prevState) => {
-                                        return {
-                                            ...prevState,
-                                            line4: newLine
-                                        }
-                                    });
-                                    counter++;
-
-                                    if (counter >= text4Array.length) {
-                                        clearInterval(lineArray[3])
-                                    }
-                                }, 50)
-                            }
-                        }, 50)
+                        arrayCounter++;
+                        intervalTrigger();
                     }
-                }, 50)
-            }
-        }, 50);
+                }
+            }, 50);
+        };
+        intervalTrigger()
     };
-
-    useEffect(() => {
-        typeWriter();
-        return () => lineArray.forEach(line => clearInterval(line));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
 
     return(
         <Layout>
@@ -119,6 +76,6 @@ const IndexPage = () => {
             </div>
         </Layout>
     )
-}
+};
 
 export default IndexPage
