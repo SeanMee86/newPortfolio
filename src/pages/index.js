@@ -64,15 +64,19 @@ const IndexPage = () => {
         intervalTrigger()
     };
 
+    const printLines = () => {
+        return linesArray
+            .map((line,ind) => (
+                <p key={ind}>{text[`line${ind+1}`]}</p>
+            ));
+    };
+
     return(
         <Layout>
             <SEO title="Home" />
             <div className={indexStyles.container}>
                 <img className={indexStyles.portrait} src={profilePic} alt="Photograph of Web Developer Sean Mee"/>
-                <p>{text.line1}</p>
-                <p>{text.line2}</p>
-                <p>{text.line3}</p>
-                <p>{text.line4}</p>
+                {printLines()}
             </div>
         </Layout>
     )
