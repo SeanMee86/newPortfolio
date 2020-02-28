@@ -1,15 +1,17 @@
-import React, {useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import indexStyles from './index.module.scss'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import profilePic from '../images/sean-mee-min.jpg.webp';
+import TypeWriter from "../assets/scripts/typewriter"
+import profilePic from "../images/sean-mee-min.jpg.webp"
+
 
 const IndexPage = () => {
 
     useEffect(() => {
-        typeWriter();
-        return () => clearInterval(lineInterval);
+        typeWriter.typeLines(linesArray, setText);
+        return () => clearInterval(typeWriter.intervalRef());
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -20,49 +22,14 @@ const IndexPage = () => {
         line4: ''
     });
 
-    const text1Array = 'My name is Sean Mee'.split('');
-    const text2Array = 'I am a Full Stack Web Developer'.split('');
-    const text3Array = 'Living in Southern California'.split('');
-    const text4Array = 'Specializing in JavaScript'.split('');
-
     const linesArray = [
-        text1Array,
-        text2Array,
-        text3Array,
-        text4Array
+        'My name is Sean Mee'.split(''),
+        'I am a Full Stack Web Developer'.split(''),
+        'Living in Southern California'.split(''),
+        'Specializing in JavaScript'.split('')
     ];
 
-    let lineInterval;
-
-    const typeWriter = () => {
-        let newLine = '';
-        let counter = 0;
-        let arrayCounter = 1;
-
-        const intervalTrigger = () => {
-            lineInterval = setInterval(() => {
-                newLine = newLine + linesArray[arrayCounter - 1][counter];
-                setText((prevState) => {
-                    return {
-                        ...prevState,
-                        ['line' + arrayCounter]: newLine
-                    }
-                });
-                counter++;
-
-                if (counter >= linesArray[arrayCounter - 1].length) {
-                    clearInterval(lineInterval);
-                    if(arrayCounter < linesArray.length) {
-                        newLine = '';
-                        counter = 0;
-                        arrayCounter++;
-                        intervalTrigger();
-                    }
-                }
-            }, 50);
-        };
-        intervalTrigger()
-    };
+    const typeWriter = new TypeWriter();
 
     const printLines = () => {
         return linesArray
@@ -82,4 +49,4 @@ const IndexPage = () => {
     )
 };
 
-export default IndexPage
+export default IndexPage;
