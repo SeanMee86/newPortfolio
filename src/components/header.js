@@ -8,7 +8,7 @@ const Header = ({ siteTitle }) => {
         <header>
             <h1 className={headerStyles.heading}>{siteTitle}</h1>
             <div className={headerStyles.menuWrapper}>
-                <input type="checkbox" className={headerStyles.toggler}/>
+                <input title={'Menu Box'} type="checkbox" className={headerStyles.toggler}/>
                 <div className={headerStyles.hamburger}><div></div></div>
                 <nav className={headerStyles.menu}>
                     <div>
