@@ -10,7 +10,7 @@ const TypeWriter = function(array) {
     this.linesArray.forEach((line, ind) => this.textObj[`line${ind+1}`] = '');
     const [text, setText] = useState(this.textObj);
 
-    this.typeLines = () => {
+    this.createLines = () => {
         this.typingInterval = setInterval(() => {
             this.newLine = this.newLine + this.linesArray[this.arrayCounter - 1][this.counter];
 
@@ -29,7 +29,7 @@ const TypeWriter = function(array) {
                     this.newLine = '';
                     this.counter = 0;
                     this.arrayCounter++;
-                    this.typeLines();
+                    this.createLines();
                 }
             }
         }, 50);
@@ -39,7 +39,7 @@ const TypeWriter = function(array) {
         return text;
     };
 
-    this.createLines = () => {
+    this.typeLines = () => {
         return this.linesArray
             .map((line,ind) => (
                 <p key={ind}>{this.printText()[`line${ind+1}`]}</p>

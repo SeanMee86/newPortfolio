@@ -19,7 +19,7 @@ const IndexPage = () => {
     const typeWriter = new TypeWriter(linesArray);
 
     useEffect(() => {
-        typeWriter.typeLines();
+        typeWriter.createLines();
         return () => clearInterval(typeWriter.intervalRef());
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -29,7 +29,7 @@ const IndexPage = () => {
             <SEO title="Home" />
             <div className={indexStyles.container}>
                 <img className={indexStyles.portrait} src={profilePic} alt="Photograph of Web Developer Sean Mee"/>
-                {typeWriter.createLines()}
+                {typeWriter.typeLines()}
             </div>
         </Layout>
     )
