@@ -26,6 +26,6 @@ class IndexPage extends Component{
             </Layout>
         )
     }
-};
+}
 
 export default IndexPage;
