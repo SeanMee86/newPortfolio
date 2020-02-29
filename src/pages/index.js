@@ -8,20 +8,18 @@ import profilePic from "../assets/images/sean-mee-min.jpg.webp"
 
 class IndexPage extends Component{
 
-    linesArray = [
-        'My name is Sean Mee',
-        'I am a Full Stack Web Developer',
-        'Living in Southern California',
-        'Specializing in JavaScript'
-    ];
-
     render() {
         return (
             <Layout>
                 <SEO title="Home"/>
                 <div className={indexStyles.container}>
                     <img className={indexStyles.portrait} src={profilePic} alt="Photograph of Web Developer Sean Mee"/>
-                    <TypeOut lines={this.linesArray}/>
+                    <TypeOut delay={50}>
+                        <p>My name is Sean Mee</p>
+                        <p>I am a Full Stack Web Developer</p>
+                        <p>Living in Southern California</p>
+                        <p>Specializing in JavaScript</p>
+                    </TypeOut>
                 </div>
             </Layout>
         )

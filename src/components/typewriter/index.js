@@ -3,7 +3,7 @@ import TypeWriter from './typewriter';
 import PropTypes from 'prop-types';
 
 const TypeOut = (props) => {
-    const typeWriter = new TypeWriter(props.lines, props.delay);
+    const typeWriter = new TypeWriter(props.children, props.delay);
 
     useEffect(() => {
         typeWriter.createLines();
@@ -24,7 +24,6 @@ TypeOut.defaultProps = {
 
 TypeOut.propTypes = {
     delay: PropTypes.number,
-    lines: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default TypeOut;
