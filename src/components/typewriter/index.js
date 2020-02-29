@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import TypeWriter from './typewriter';
 
-const TypeContainer = (props) => {
+const TypeOut = (props) => {
     const typeWriter = new TypeWriter(props.lines, props.delay ? props.delay : 70);
 
     useEffect(() => {
@@ -17,4 +17,4 @@ const TypeContainer = (props) => {
     )
 };
 
-export default TypeContainer;
+export default TypeOut;

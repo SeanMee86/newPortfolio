@@ -3,8 +3,8 @@ import indexStyles from './index.module.scss'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import TypeContainer from "../components/typewriter";
-import profilePic from "../images/sean-mee-min.jpg.webp"
+import TypeOut from "../components/typewriter";
+import profilePic from "../assets/images/sean-mee-min.jpg.webp"
 
 class IndexPage extends Component{
 
@@ -21,7 +21,7 @@ class IndexPage extends Component{
                 <SEO title="Home"/>
                 <div className={indexStyles.container}>
                     <img className={indexStyles.portrait} src={profilePic} alt="Photograph of Web Developer Sean Mee"/>
-                    <TypeContainer lines={this.linesArray}/>
+                    <TypeOut lines={this.linesArray}/>
                 </div>
             </Layout>
         )
