@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
     return (
         <footer>
-            Created by Sean Mee &copy; {new Date().getFullYear()}
+            Website Created by Sean Mee using GatsbyJS and Contentful CMS &copy; {new Date().getFullYear()}
         </footer>
     )
 };

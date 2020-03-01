@@ -1,0 +1,23 @@
+.header {
+  text-align: center;
+}
+
+.projectContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.project {
+  width: 30%;
+
+  a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+
+    h3 {
+      text-align: center;
+    }
+  }
+}

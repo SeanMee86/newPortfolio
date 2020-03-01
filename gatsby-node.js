@@ -16,7 +16,6 @@ module.exports.createPages = async ({graphql, actions}) => {
                 edges {
                     node {
                         slug
-                        portfolioPostType
                     }
                 }
             }
@@ -26,7 +25,7 @@ module.exports.createPages = async ({graphql, actions}) => {
     res.data.allContentfulPortfolioPost.edges.forEach(edge => {
         createPage({
             component: portfolioPostTemplate,
-            path: edge.node.portfolioPostType === 'Professional' ? `/professional/${edge.node.slug}` : `/personal/${edge.node.slug}`,
+            path: `/portfolio/${edge.node.slug}`,
             context: {
                 slug: edge.node.slug
             }

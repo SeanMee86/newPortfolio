@@ -1,3 +1,21 @@
+@import "variables";
+
 .main {
   height: 100%;
+}
+
+body {
+  footer,
+  p,
+  li,
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $brandonGrot;
+
+  }
 }
