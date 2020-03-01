@@ -8,7 +8,7 @@ const path = require('path');
 
 module.exports.createPages = async ({graphql, actions}) => {
     const {createPage} = actions;
-    const portfolioPostTemplate = path.resolve('./src/pages/templates/portfolioPostTemplate.js');
+    const portfolioPostTemplate = path.resolve('./src/templates/portfolioPostTemplate.js');
 
     const res = await graphql(`
         query {
@@ -24,7 +24,6 @@ module.exports.createPages = async ({graphql, actions}) => {
     `);
 
     res.data.allContentfulPortfolioPost.edges.forEach(edge => {
-        console.log(edge.node.portfolioPostType);
         createPage({
             component: portfolioPostTemplate,
             path: edge.node.portfolioPostType === 'Professional' ? `/professional/${edge.node.slug}` : `/personal/${edge.node.slug}`,
