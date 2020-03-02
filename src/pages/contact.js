@@ -15,6 +15,8 @@ const Contact = () => {
             </div>
             <div>
                 <form name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="bot-field" />
+                    <input type="hidden" name="form-name" value="contact" />
                     <p>
                         <label className={contactStyles.labels}><span>Name:</span> <input type="text" name="name" /></label>
                     </p>
