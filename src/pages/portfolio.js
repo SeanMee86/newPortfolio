@@ -40,6 +40,8 @@ const Portfolio = (props) => {
         .filter(project => project.node.portfolioPostType === type)
         .map((project, ind) => {
 
+            console.log(project.node.portfolioPostBody);
+
             const styles = {
                 background: `url(${project.node.portfolioPostImage !== null ? project.node.portfolioPostImage[0].file.url : ''})`,
                 backgroundPosition: 'center top',
@@ -47,16 +49,19 @@ const Portfolio = (props) => {
             };
 
             return (
-                <div
-                    key={ind}
-                    style={styles}
-                     className={portfolioStyles.project}>
-                    <div className={portfolioStyles.inner}>
-                        <Link to={`/portfolio/${project.node.slug}`}>
-                        <h3>{project.node.portfolioPostTitle}</h3>
-                        </Link>
+                <Link to={`/portfolio/${project.node.slug}`}>
+                    <div
+                        key={ind}
+                        style={styles}
+                        className={portfolioStyles.project}>
+                        <div className={portfolioStyles.inner}>
+                            <h3>{project.node.portfolioPostTitle}</h3>
+                        </div>
+                        <div className={portfolioStyles.bottomContent}>
+                            <p>{project.node.portfolioPostBody.content[0].content[0].value}</p>
+                        </div>
                     </div>
-                </div>
+                </Link>
             )
         });
 
