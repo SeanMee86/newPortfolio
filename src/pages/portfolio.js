@@ -14,51 +14,43 @@ export const query = graphql`
             slug
             portfolioPostTitle
             portfolioPostType
+            portfolioPostSnippet {
+                portfolioPostSnippet
+            }
             portfolioPostImage {
               file {
                 url
-              }
-            }
-            portfolioPostBody {
-              content {
-                content {
-                  value
-                }
               }
             }
           }
         }
       }
     }
-`
+`;
 
 const Portfolio = (props) => {
 
-    const projects = props.data.allContentfulPortfolioPost.edges;
-
-    const printProjects = (type) => projects
+    const printProjects = (type) => props.data.allContentfulPortfolioPost.edges
         .filter(project => project.node.portfolioPostType === type)
         .map((project, ind) => {
 
-            console.log(project.node.portfolioPostBody);
-
             const styles = {
-                background: `url(${project.node.portfolioPostImage !== null ? project.node.portfolioPostImage[0].file.url : ''})`,
+                background: `url(${project.node.portfolioPostImage[0].file.url})`,
                 backgroundPosition: 'center top',
                 backgroundSize: 'cover'
             };
 
             return (
-                <Link to={`/portfolio/${project.node.slug}`}>
+                <Link key={ind}
+                      to={`/portfolio/${project.node.slug}`}>
                     <div
-                        key={ind}
                         style={styles}
                         className={portfolioStyles.project}>
                         <div className={portfolioStyles.inner}>
                             <h3>{project.node.portfolioPostTitle}</h3>
                         </div>
                         <div className={portfolioStyles.bottomContent}>
-                            <p>{project.node.portfolioPostBody.content[0].content[0].value}</p>
+                            <p>{project.node.portfolioPostSnippet.portfolioPostSnippet}</p>
                         </div>
                     </div>
                 </Link>
@@ -67,20 +59,22 @@ const Portfolio = (props) => {
 
     return (
         <Layout>
-            <SEO title={'Services'}/>
+            <SEO title={'Portfolio'}/>
             <div>
                 <h1 className={portfolioStyles.header}>My Work</h1>
-                <h2>Professional Projects</h2>
+
+                <h2>Professional Websites</h2>
                 <div className={portfolioStyles.projectContainer}>
-                {printProjects('Professional')}
+                    {printProjects('Professional')}
                 </div>
+
                 <h2>Personal Projects</h2>
                 <div className={portfolioStyles.projectContainer}>
-                {printProjects('Personal')}
+                    {printProjects('Personal')}
                 </div>
             </div>
         </Layout>
     )
-}
+};
 
 export default Portfolio
