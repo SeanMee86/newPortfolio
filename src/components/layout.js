@@ -49,7 +49,6 @@ const Layout = ({ children }) => {
             className={layoutStyles.container}
             style={{
                 margin: `0 auto`,
-                maxWidth: 960
             }}
             >
             <Header siteTitle={data.site.siteMetadata.title} />

@@ -39,11 +39,23 @@ const Portfolio = (props) => {
     const printProjects = (type) => projects
         .filter(project => project.node.portfolioPostType === type)
         .map((project, ind) => {
+
+            const styles = {
+                background: `url(${project.node.portfolioPostImage !== null ? project.node.portfolioPostImage[0].file.url : ''})`,
+                backgroundPosition: 'center top',
+                backgroundSize: 'cover'
+            };
+
             return (
-                <div key={ind} className={portfolioStyles.project}>
-                    <Link to={`/portfolio/${project.node.slug}`}>
-                    <h3>{project.node.portfolioPostTitle}</h3>
-                    </Link>
+                <div
+                    key={ind}
+                    style={styles}
+                     className={portfolioStyles.project}>
+                    <div className={portfolioStyles.inner}>
+                        <Link to={`/portfolio/${project.node.slug}`}>
+                        <h3>{project.node.portfolioPostTitle}</h3>
+                        </Link>
+                    </div>
                 </div>
             )
         });
