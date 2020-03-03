@@ -6,6 +6,10 @@
 .imgThumbnail {
   width: 30%;
   margin-right: 3%;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .carousel {
