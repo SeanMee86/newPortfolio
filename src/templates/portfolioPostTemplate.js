@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {graphql} from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -8,16 +8,12 @@ import portfolioPostStyles from './portfolioPost.module.scss'
 export const query = graphql`
     query($slug: String!) {
       contentfulPortfolioPost(slug: {eq: $slug}) {
+        liveUrl
+        githubRepo
         portfolioPostTitle
-        portfolioPostSnippet {
-            portfolioPostSnippet
-        }
+        
         portfolioPostBody {
-          content {
-            content {
-              value
-            }
-          }
+          json
         }
         portfolioPostImage {
           title
@@ -64,10 +60,13 @@ const PortfolioPost = (props) => {
             <div>
                 <h1>{postData.portfolioPostTitle}</h1>
                 <img className={portfolioPostStyles.portfolioImg} src={currentImage.image} alt={currentImage.alt}/>
-                <p>{postData.portfolioPostSnippet.portfolioPostSnippet}</p>
+                <div className={portfolioPostStyles.links}>
+                    {postData.liveUrl ? <a href={postData.liveUrl} target={'_blank'}>Live Site</a> : null}{postData.githubRepo !== null ? <span> | <a href={postData.githubRepo} target={'_blank'}>GitHub Repo</a></span> : null}
+                </div>
                 <div className={portfolioPostStyles.carousel}>
                 {createCarousel()}
                 </div>
+                <p>{documentToReactComponents(postData.portfolioPostBody.json)}</p>
             </div>
         </Layout>
     )
