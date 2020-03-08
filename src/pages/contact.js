@@ -12,6 +12,7 @@ const Contact = () => {
             <SEO title={'Contact'}/>
             <div>
                 <h1>Contact</h1>
+                <p className={contactStyles.contact}>Hi! Thanks for visiting my site, please feel free to drop me a line and inquire on how I may be of assistance to you or your organization.</p>
             </div>
             <div>
                 <form name="contact" method="POST" data-netlify-honeypot="bot-field" data-netlify="true">

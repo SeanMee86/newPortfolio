@@ -15,6 +15,7 @@ const Header = ({ siteTitle }) => {
                         <div>
                             <ul className={headerStyles.list}>
                                 <li><Link to={'/'} activeClassName={headerStyles.active}>Home</Link></li>
+                                <li><Link to={'/services'} activeClassName={headerStyles.active}>Services</Link></li>
                                 <li><Link to={'/about'} activeClassName={headerStyles.active}>About</Link></li>
                                 <li><Link to={'/portfolio'} activeClassName={headerStyles.active}>Portfolio</Link></li>
                                 <li><Link to={'/contact'} activeClassName={headerStyles.active}>Contact</Link></li>
