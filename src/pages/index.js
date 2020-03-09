@@ -4,7 +4,7 @@ import indexStyles from './index.module.scss'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TypeOut from "../components/typewriter";
-import profilePic from "../assets/images/sean-mee-min.jpg.webp"
+import profilePic from "../assets/images/sean-mee-min.jpg"
 
 class IndexPage extends Component{
 
