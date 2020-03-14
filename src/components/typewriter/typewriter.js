@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 class TypeWriter{
     constructor(array, timeDelay){
-        !array.length ? this.array = [array] : this.array = array;
+        !Array.isArray(array) ? this.array = [array] : this.array = array;
         this.timeDelay = timeDelay;
         this.newLine = '';
         this.counter = 0;
@@ -41,7 +41,7 @@ class TypeWriter{
 
     typeLines = () => this.charsArray
         .map((line,ind) => {
-            const CustomTag = `${this.array[ind].type}`;
+            const CustomTag = `${this.array[ind].type ? this.array[ind].type : 'p'}`;
             return (
                 <CustomTag key={ind}>{this.printText()[`line${ind+1}`]}</CustomTag>
             )
