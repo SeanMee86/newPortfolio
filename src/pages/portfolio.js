@@ -12,6 +12,7 @@ export const query = graphql`
         edges {
           node {
             slug
+            order
             portfolioPostTitle
             portfolioPostType
             portfolioPostSnippet {
@@ -32,6 +33,7 @@ const Portfolio = (props) => {
 
     const printProjects = (type) => props.data.allContentfulPortfolioPost.edges
         .filter(project => project.node.portfolioPostType === type)
+        .sort((a, b) => a.node.order - b.node.order)
         .map((project, ind) => {
 
             const styles = {
