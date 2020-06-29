@@ -6,6 +6,8 @@
 .imgThumbnail {
   width: 30%;
   margin-right: 3%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
 
   &:hover {
     cursor: pointer;
@@ -20,4 +22,5 @@
   display: flex;
   justify-content: flex-start;
   width: 100%;
+  flex-wrap: wrap;
 }
