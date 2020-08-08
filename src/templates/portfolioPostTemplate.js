@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {graphql} from "gatsby";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../components/layout/layout";
+import SEO from "../components/seo/seo";
 import portfolioPostStyles from './portfolioPost.module.scss'
 
 export const query = graphql`
