@@ -26,13 +26,20 @@ export const query = graphql`
     }
 `;
 
-const PortfolioPost = (props) => {
-
-    const postData = props.data.contentfulPortfolioPost;
-
+const PortfolioPost =
+    ({ data: {
+           contentfulPortfolioPost: {
+            portfolioPostImage,
+            portfolioPostTitle,
+            liveUrl,
+            githubRepo,
+            portfolioPostBody
+           }
+        }
+    }) => {
     const [currentImage, setCurrentImage] = useState({
-        image: postData.portfolioPostImage[0].file.url,
-        alt: postData.portfolioPostImage[0].title
+        image: portfolioPostImage[0].file.url,
+        alt: portfolioPostImage[0].title
     });
 
     const changeImageHandler = (url, altTag) => {
@@ -44,7 +51,7 @@ const PortfolioPost = (props) => {
     };
 
     /* eslint-disable */
-    const createCarousel = () => postData.portfolioPostImage.map((img, ind) => (
+    const createCarousel = () => portfolioPostImage.map((img, ind) => (
         <img
             className={portfolioPostStyles.imgThumbnail}
             key={ind}
@@ -56,17 +63,17 @@ const PortfolioPost = (props) => {
 
     return (
         <Layout>
-            <SEO title={postData.portfolioPostTitle}/>
+            <SEO title={portfolioPostTitle}/>
             <div>
-                <h1>{postData.portfolioPostTitle}</h1>
+                <h1>{portfolioPostTitle}</h1>
                 <img className={portfolioPostStyles.portfolioImg} src={currentImage.image} alt={currentImage.alt}/>
                 <div className={portfolioPostStyles.links}>
-                    {postData.liveUrl ? <a href={postData.liveUrl} target={'_blank'} rel={"noopener noreferrer"}>Live Site</a> : null}{postData.githubRepo !== null ? <span> | <a href={postData.githubRepo} target={'_blank'} rel={"noopener noreferrer"}>GitHub Repo</a></span> : null}
+                    {liveUrl ? <a href={liveUrl} target={'_blank'} rel={"noopener noreferrer"}>Live Site</a> : null}{githubRepo !== null ? <span> | <a href={githubRepo} target={'_blank'} rel={"noopener noreferrer"}>GitHub Repo</a></span> : null}
                 </div>
                 <div className={portfolioPostStyles.carousel}>
                 {createCarousel()}
                 </div>
-                <p>{documentToReactComponents(postData.portfolioPostBody.json)}</p>
+                <p>{documentToReactComponents(portfolioPostBody.json)}</p>
             </div>
         </Layout>
     )
