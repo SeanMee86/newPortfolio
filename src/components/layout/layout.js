@@ -7,7 +7,7 @@
 
 import React, {useEffect, useState} from "react"
 import PropTypes from "prop-types"
-import  {setConfig } from 'react-hot-loader'
+import  { setConfig } from 'react-hot-loader'
 import { useStaticQuery, graphql } from "gatsby"
 import layoutStyles from './layout.module.scss'
 

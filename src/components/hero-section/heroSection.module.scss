@@ -1,10 +1,12 @@
 @import "../../assets/styles/variables";
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  position: relative;
 
   @media screen and (max-width: 767px) {
     margin-top: 10vh;
@@ -24,7 +26,12 @@
     border-radius: 50%;
   }
 
-  .typeContainer {
-    display: none;
+  .backdrop {
+    background: green;
+    position: absolute;
+    width: 100vw;
+    height: 70%;
+    bottom: 20px;
+    z-index: -1;
   }
 }

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import indexStyles from "./index.module.scss";
+import indexStyles from "./heroSection.module.scss";
 import profilePic from "../../assets/images/sean-mee.jpg";
 import TypeOut from "../typewriter";
 
@@ -14,6 +14,7 @@ class HeroSection extends Component {
                     <p>Living in Southern California</p>
                     <p>Specializing in JavaScript</p>
                 </TypeOut>
+                {/*<div className={indexStyles.backdrop}/>*/}
             </div>
         )
     }

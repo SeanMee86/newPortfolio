@@ -1,11 +1,10 @@
 import React, {Component} from "react"
 
-import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import HeroSection from "../components/hero-section/hero-section";
+import Layout from "../components/layout/layout";
 
 class IndexPage extends Component{
-
     render() {
         return (
             <Layout>
