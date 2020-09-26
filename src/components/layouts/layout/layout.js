@@ -11,8 +11,8 @@ import  { setConfig } from 'react-hot-loader'
 import { useStaticQuery, graphql } from "gatsby"
 import layoutStyles from './layout.module.scss'
 
-import Header from "../header/header"
-import Footer from "../footer/footer";
+import Header from "../../header/header"
+import Footer from "../../footer/footer";
 import "./layout.css"
 
 setConfig({

@@ -1,7 +1,7 @@
 import React from "react"
 import portfolioStyles from "./portfolio.module.scss";
-import { GetPortfolioPost } from "../../assets/utils/getPortfolioPosts";
-import { printProjects } from "../../assets/utils/printProjects";
+import { GetPortfolioPost } from "../../../assets/utils/getPortfolioPosts";
+import { printProjects } from "../../../assets/utils/printProjects";
 
 const PortfolioSection = () => {
     const allContentfulPortfolioPost = GetPortfolioPost();

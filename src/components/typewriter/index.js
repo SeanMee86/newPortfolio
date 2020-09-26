@@ -12,14 +12,15 @@ const TypeOut = (props) => {
     }, []);
 
     return (
-        <div className={props.className} style={{height: "150px"}}>
+        <div className={props.className} style={{height: props.textHeight}}>
             {typeWriter.typeLines()}
         </div>
     )
 };
 
 TypeOut.defaultProps = {
-    delay: 70
+    delay: 70,
+    textHeight: "auto"
 };
 
 TypeOut.propTypes = {

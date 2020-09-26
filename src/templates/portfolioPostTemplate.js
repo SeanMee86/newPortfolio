@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {graphql} from "gatsby";
-import Layout from "../components/layout/layout";
+import Layout from "../components/layouts/layout/layout";
 import SEO from "../components/seo/seo";
 import portfolioPostStyles from './portfolioPost.module.scss'
 
