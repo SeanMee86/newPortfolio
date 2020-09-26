@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {graphql} from "gatsby";
-import Layout from "../components/layout/layout";
+import Layout from "../components/layouts/layout/layout";
 import SEO from "../components/seo/seo";
 import portfolioPostStyles from './portfolioPost.module.scss'
 
@@ -64,7 +64,7 @@ const PortfolioPost =
     return (
         <Layout>
             <SEO title={portfolioPostTitle}/>
-            <div>
+            <div style={{paddingTop: "60px"}}>
                 <h1>{portfolioPostTitle}</h1>
                 <img className={portfolioPostStyles.portfolioImg} src={currentImage.image} alt={currentImage.alt}/>
                 <div className={portfolioPostStyles.links}>

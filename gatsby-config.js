@@ -5,11 +5,23 @@ module.exports = {
     author: `@seanmee1`,
   },
   plugins: [
+    `gatsby-plugin-anchor-links`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      }
+    },
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: 'GitHub',
+        fieldName: 'github',
+        url: 'https://api.github.com/graphql',
+        headers: {
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`
+        }
       }
     },
     `gatsby-plugin-sass`,

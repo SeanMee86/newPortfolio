@@ -7,12 +7,12 @@
 
 import React, {useEffect, useState} from "react"
 import PropTypes from "prop-types"
-import  {setConfig } from 'react-hot-loader'
+import  { setConfig } from 'react-hot-loader'
 import { useStaticQuery, graphql } from "gatsby"
 import layoutStyles from './layout.module.scss'
 
-import Header from "../header/header"
-import Footer from "../footer/footer";
+import Header from "../../header/header"
+import Footer from "../../footer/footer";
 import "./layout.css"
 
 setConfig({
@@ -45,13 +45,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
+        <Header siteTitle={data.site.siteMetadata.title} />
         <div
             className={layoutStyles.container}
             style={{
                 margin: `0 auto`,
             }}
             >
-            <Header siteTitle={data.site.siteMetadata.title} />
             <div className={layoutStyles.content}>
                 <main style={styles}>{children}</main>
             </div>

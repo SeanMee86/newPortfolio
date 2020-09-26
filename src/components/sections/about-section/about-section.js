@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import {Link} from "gatsby";
 
 class AboutSection extends Component {
     render() {
@@ -10,7 +9,7 @@ class AboutSection extends Component {
                 <p>I started building websites at the young age of 11 and rediscovered my passion for IT in my late 20's.</p>
                 <p>I specialize in Full Stack JavaScript development using Front End frameworks, specifically React and Angular2+, NodeJS, and noSQL and SQL databases.</p>
                 <p>I am currently employed with Healthcare Success Llc in Irvine California, but am always open to new opportunities to build applications and SAAS products that I can be proud of.</p>
-                <p>Feel free to contact me using the form on my <Link to={'/contact'}>contact page</Link>. Cheers!</p>
+                <p>Feel free to contact me using the form below. Cheers!</p>
             </div>
         )
     }

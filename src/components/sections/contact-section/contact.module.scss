@@ -1,0 +1,35 @@
+.contact {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  max-width: 75%;
+}
+
+label {
+  display: none;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 2px solid #999;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.contactBtn {
+  width: 200px;
+  border-radius: 5px;
+  padding: 10px 25px;
+  border: 1px solid #a9c7d4;
+  background-color: #a9c7d4;
+  color: white;
+  font-weight: 400;
+  font-size: 1.4rem;
+  transition: all 0.4s ease;
+
+  &:hover {
+    cursor: pointer;
+    color: #a9c7d4;
+    background-color: #fff;
+  }
+}

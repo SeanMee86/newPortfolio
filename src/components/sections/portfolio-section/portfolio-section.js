@@ -1,7 +1,7 @@
 import React from "react"
 import portfolioStyles from "./portfolio.module.scss";
-import { GetPortfolioPost } from "../../assets/utils/getPortfolioPosts";
-import { printProjects } from "../../assets/utils/printProjects";
+import { GetPortfolioPost } from "../../../assets/utils/getPortfolioPosts";
+import { printProjects } from "../../../assets/utils/printProjects";
 
 const PortfolioSection = () => {
     const allContentfulPortfolioPost = GetPortfolioPost();
@@ -10,7 +10,7 @@ const PortfolioSection = () => {
         <div>
             <h1 className={portfolioStyles.header}>My Work</h1>
 
-            <h2>Professional Websites</h2>
+            <h2>Work Projects</h2>
             <div className={portfolioStyles.projectContainer}>
                 {printProjects('Professional', allContentfulPortfolioPost)}
             </div>
