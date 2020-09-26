@@ -10,7 +10,7 @@ const PortfolioSection = () => {
         <div>
             <h1 className={portfolioStyles.header}>My Work</h1>
 
-            <h2>Professional Websites</h2>
+            <h2>Work Projects</h2>
             <div className={portfolioStyles.projectContainer}>
                 {printProjects('Professional', allContentfulPortfolioPost)}
             </div>
