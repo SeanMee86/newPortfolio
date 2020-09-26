@@ -24,7 +24,7 @@ class IndexPage extends Component{
                 <SectionLayout anchorTag={'services'}>
                     <ServicesSection/>
                 </SectionLayout>
-                <SectionLayout>
+                <SectionLayout anchorTag={'github'}>
                     <GithubSection/>
                 </SectionLayout>
                 <SectionLayout anchorTag={'about'}>
