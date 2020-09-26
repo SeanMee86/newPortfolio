@@ -1,4 +1,5 @@
 import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { Link } from 'gatsby';
 import React, {useRef} from "react"
 import headerStyles from './header.module.scss'
 import siteLogo from "../../assets/images/smdw-logo.png";
@@ -13,12 +14,12 @@ const Header = () => {
 
     return (
         <header className={headerStyles.main}>
-            <AnchorLink to={'/'} style={{margin: "15px"}}>
+            <Link to={'/'} style={{margin: "15px"}}>
                 <img
                     width={400}
                     src={siteLogo}
                     alt="Site Logo"/>
-            </AnchorLink>
+            </Link>
             <div className={headerStyles.menuWrapper}>
                 <input
                     ref={inputRef}

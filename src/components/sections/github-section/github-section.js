@@ -4,15 +4,15 @@ import buildChart from '../../../assets/utils/d3Data'
 
 const GithubSection = () => {
 
+    const gitArray = GetGithubData();
+
     useEffect(() => {
         buildChart(gitArray);
     }, [])
 
-    const gitArray = GetGithubData();
-
     return (
         <>
-        <h1>My Github Data</h1>
+        <h1>Github Data Overview</h1>
         <div style={{width: "100%"}} id={'data-section'}/>
             <p>This live graph was built using GraphQL and D3JS. You can view my GitHub <a href={'https://github.com/SeanMee86'} target={'_blank'} rel={'noopener noreferrer'}>here</a>.</p>
         </>
