@@ -64,7 +64,7 @@ const PortfolioPost =
     return (
         <Layout>
             <SEO title={portfolioPostTitle}/>
-            <div>
+            <div style={{paddingTop: "60px"}}>
                 <h1>{portfolioPostTitle}</h1>
                 <img className={portfolioPostStyles.portfolioImg} src={currentImage.image} alt={currentImage.alt}/>
                 <div className={portfolioPostStyles.links}>

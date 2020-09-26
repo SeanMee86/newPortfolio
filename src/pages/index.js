@@ -8,6 +8,7 @@ import PortfolioSection from "../components/sections/portfolio-section/portfolio
 import ServicesSection from "../components/sections/services-section/services-section";
 import ContactSection from "../components/sections/contact-section/contact-section";
 import SectionLayout from "../components/layouts/section-layout/sectionLayout";
+import GithubSection from "../components/sections/github-section/github-section";
 
 class IndexPage extends Component{
     render() {
@@ -22,6 +23,9 @@ class IndexPage extends Component{
                 </SectionLayout>
                 <SectionLayout anchorTag={'services'}>
                     <ServicesSection/>
+                </SectionLayout>
+                <SectionLayout>
+                    <GithubSection/>
                 </SectionLayout>
                 <SectionLayout anchorTag={'about'}>
                     <AboutSection/>
