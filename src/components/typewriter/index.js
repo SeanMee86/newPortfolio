@@ -12,7 +12,7 @@ const TypeOut = (props) => {
     }, []);
 
     return (
-        <div className={props.className}>
+        <div className={props.className} style={{height: "150px"}}>
             {typeWriter.typeLines()}
         </div>
     )

@@ -5,6 +5,7 @@ module.exports = {
     author: `@seanmee1`,
   },
   plugins: [
+    `gatsby-plugin-anchor-links`,
     {
       resolve: `gatsby-source-contentful`,
       options: {

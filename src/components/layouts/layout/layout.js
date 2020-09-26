@@ -45,13 +45,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
+        <Header siteTitle={data.site.siteMetadata.title} />
         <div
             className={layoutStyles.container}
             style={{
                 margin: `0 auto`,
             }}
             >
-            <Header siteTitle={data.site.siteMetadata.title} />
             <div className={layoutStyles.content}>
                 <main style={styles}>{children}</main>
             </div>
