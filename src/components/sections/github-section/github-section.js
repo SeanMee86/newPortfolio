@@ -8,6 +8,7 @@ const GithubSection = () => {
 
     useEffect(() => {
         buildChart(gitArray);
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [])
 
     return (

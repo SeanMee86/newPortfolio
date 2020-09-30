@@ -1,4 +1,5 @@
 import {graphql, useStaticQuery} from "gatsby";
+require('./arrayStringCount');
 
 export const GetGithubData = () => {
     const data = useStaticQuery(graphql`
@@ -27,25 +28,11 @@ export const GetGithubData = () => {
     const {github: {user: {repositories: {edges}}}} = data;
     const languages = edges
         .map(edge => edge.node.languages.edges.map(language => language.node.name))
-        .reduce((prev, current) => prev.concat(current))
-        .sort();
+        .reduce((prev, current) => prev.concat(current));
 
     const totalLanguages = languages.length
 
-    const languageCount = []
-    let langInd = 0;
-    languages.forEach((language, i) => {
-        if(i === 0){
-            languageCount.push([])
-            languageCount[langInd].push(language)
-        }else if(languages[i] === languages[i-1]){
-            languageCount[langInd].push(language)
-        }else {
-            languageCount.push([])
-            langInd++
-            languageCount[langInd].push(language)
-        }
-    })
+    const languageCount = languages.stringCount();
 
     return languageCount.map(arr => {
         return {

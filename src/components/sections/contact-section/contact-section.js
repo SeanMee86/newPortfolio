@@ -11,7 +11,7 @@ class ContactSection extends Component {
                     <p className={contactStyles.contact}>Hi! Thanks for visiting my site, please feel free to drop me a line and inquire on how I may be of assistance to you or your organization.</p>
                 </div>
                 <div style={{width: "100%"}}>
-                    <form style={{maxWidth: "400px", margin: "auto"}} name="contact" method="POST" data-netlify-honeypot="bot-field" data-netlify="true">
+                    <form style={{maxWidth: "400px"}} name="contact" method="POST" data-netlify-honeypot="bot-field" data-netlify="true">
                         <input type="hidden" name="form-name" value="contact" />
                         <p>
                             <label className={contactStyles.labels} htmlFor={'name'}>Name</label>
