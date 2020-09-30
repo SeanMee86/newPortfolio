@@ -15,6 +15,7 @@ const GithubSection = () => {
         <>
         <h1>Github Data Overview</h1>
         <div style={{width: "100%"}} id={'data-section'}/>
+            <h3 style={{textAlign: "center", fontSize: "22px"}}>Percentage of Repositories</h3>
             <p>This live graph was built using GraphQL and D3JS. You can view my GitHub <a href={'https://github.com/SeanMee86'} target={'_blank'} rel={'noopener noreferrer'}>here</a>.</p>
         </>
     )
