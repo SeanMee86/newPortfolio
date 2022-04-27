@@ -1,5 +1,5 @@
 import {Link} from "gatsby";
-import portfolioStyles from "../../components/sections/portfolio-section/portfolio.module.scss";
+import * as portfolioStyles from "../../components/sections/portfolio-section/portfolio.module.scss";
 import React from "react";
 
 export const printProjects = (type, allContentfulPortfolioPost) => allContentfulPortfolioPost.edges

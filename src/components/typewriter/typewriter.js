@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 
-class TypeWriter{
-    constructor(array, timeDelay){
+class TypeWriter {
+    constructor(array, timeDelay, text, setText){
         !Array.isArray(array) ? this.array = [array] : this.array = array;
         this.timeDelay = timeDelay;
         this.newLine = '';
@@ -12,7 +12,9 @@ class TypeWriter{
 
         this.textObj = {};
         this.charsArray.forEach((line, ind) => this.textObj[`line${ind+1}`] = '');
-        [this.text, this.setText] = useState(this.textObj);
+        this.text = text;
+        this.setText = setText;
+        this.setText(this.textObj);
     }
 
     createLines(){

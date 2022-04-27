@@ -1,9 +1,10 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useState } from "react"
 import TypeWriter from './typewriter';
 import PropTypes from 'prop-types';
 
 const TypeOut = (props) => {
-    const typeWriter = new TypeWriter(props.children, props.delay);
+    const [text, setText] = useState({});
+    const typeWriter = new TypeWriter(props.children, props.delay, text, setText);
 
     useEffect(() => {
         typeWriter.createLines();
