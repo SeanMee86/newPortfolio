@@ -31,7 +31,9 @@ export const onRenderBody = ({
     <Partytown
       resolveUrl={(url => {
         const proxyDomains = [
-          "www.googletagmanager.com"
+          "www.googletagmanager.com",
+          "www.google-analytics.com",
+          "www.googleoptimize.com"
         ]
         if(proxyDomains.includes(url)) {
           const proxyUrl = new URL("https://cdn.builder.io/api/v1/proxy-api")
@@ -40,7 +42,9 @@ export const onRenderBody = ({
         }
       })}
       forward={[
-        "dataLayer.push"
+        "dataLayer.push",
+        "gtag",
+        "google_optimize"
       ]}
       debug={true}
       key={'partytown'}
