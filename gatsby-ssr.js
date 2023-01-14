@@ -10,12 +10,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 `
 
 const gtmPixel = `
-<iframe
- src="https://www.googletagmanager.com/ns.html?id=GTM-N5QR68H"
- height="0"
- width="0"
- style="display:none;visibility:hidden">  
-</iframe>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5QR68H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
 `
 
 export const onRenderBody = ({
@@ -47,7 +43,7 @@ export const onRenderBody = ({
     />
   ]
   const postBodyComponents = [
-    <noscript
+    <script
       key={'gtm-pixel'}
       dangerouslySetInnerHTML={{__html: gtmPixel}}
     />
