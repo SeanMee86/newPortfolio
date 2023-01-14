@@ -73,7 +73,7 @@ const PortfolioPost =
                 <div className={portfolioPostStyles.carousel}>
                 {createCarousel()}
                 </div>
-                {/*<p>{documentToReactComponents(portfolioPostBody.raw)}</p>*/}
+                <p>{documentToReactComponents(portfolioPostBody.raw)}</p>
             </div>
         </Layout>
     )
