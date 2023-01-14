@@ -3,7 +3,7 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {graphql} from "gatsby";
 import Layout from "../components/layouts/layout/layout";
 import SEO from "../components/seo/seo";
-import * as portfolioPostStyles from './portfolioPost.module.scss'
+import portfolioPostStyles from './portfolioPost.module.scss'
 
 export const query = graphql`
     query($slug: String!) {
@@ -13,7 +13,7 @@ export const query = graphql`
         portfolioPostTitle
         
         portfolioPostBody {
-          raw
+          json
         }
         portfolioPostImage {
           title
@@ -73,7 +73,7 @@ const PortfolioPost =
                 <div className={portfolioPostStyles.carousel}>
                 {createCarousel()}
                 </div>
-                <p>{documentToReactComponents(portfolioPostBody.raw)}</p>
+                <p>{documentToReactComponents(portfolioPostBody.json)}</p>
             </div>
         </Layout>
     )

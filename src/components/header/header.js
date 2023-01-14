@@ -1,7 +1,7 @@
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Link } from 'gatsby';
 import React, {useRef} from "react"
-import * as headerStyles from './header.module.scss'
+import headerStyles from './header.module.scss'
 import siteLogo from "../../assets/images/smdw-logo.png";
 
 const Header = () => {

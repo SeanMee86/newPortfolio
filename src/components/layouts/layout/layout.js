@@ -9,7 +9,7 @@ import React, {useEffect, useState} from "react"
 import PropTypes from "prop-types"
 import  { setConfig } from 'react-hot-loader'
 import { useStaticQuery, graphql } from "gatsby"
-import * as layoutStyles from './layout.module.scss'
+import layoutStyles from './layout.module.scss'
 
 import Header from "../../header/header"
 import Footer from "../../footer/footer";

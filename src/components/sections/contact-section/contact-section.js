@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import * as contactStyles from "./contact.module.scss";
+import contactStyles from "./contact.module.scss";
 
 
 class ContactSection extends Component {

@@ -5,12 +5,6 @@
  */
 
 const path = require('path');
-const { copyLibFiles } =require('@builder.io/partytown/utils');
-
-exports.onPreBootstrap = async () => {
-    const dest = "./public/~partytown";
-    await copyLibFiles(dest);
-}
 
 module.exports.createPages = async ({graphql, actions}) => {
     const {createPage} = actions;

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import * as servicesStyles from "./services.module.scss";
+import servicesStyles from "./services.module.scss";
 
 class ServicesSection extends Component {
     render() {

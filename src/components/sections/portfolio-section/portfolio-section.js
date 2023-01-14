@@ -1,5 +1,5 @@
 import React from "react"
-import * as portfolioStyles from "./portfolio.module.scss";
+import portfolioStyles from "./portfolio.module.scss";
 import { GetPortfolioPost } from "../../../assets/utils/getPortfolioPosts";
 import { printProjects } from "../../../assets/utils/printProjects";
 
