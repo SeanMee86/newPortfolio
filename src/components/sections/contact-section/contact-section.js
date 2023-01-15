@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import contactStyles from "./contact.module.scss";
+import * as contactStyles from "./contact.module.scss";
 
 
 class ContactSection extends Component {
@@ -14,19 +14,19 @@ class ContactSection extends Component {
                     <form style={{maxWidth: "400px"}} name="contact" method="POST" data-netlify-honeypot="bot-field" data-netlify="true">
                         <input type="hidden" name="form-name" value="contact" />
                         <p>
-                            <label className={contactStyles.labels} htmlFor={'name'}>Name</label>
+                            <label htmlFor={'name'}>Name</label>
                             <input id={'name'} placeholder={'Name'} type="text" name="name" />
                         </p>
                         <p>
-                            <label className={contactStyles.labels} htmlFor={'email'}>Email</label>
+                            <label htmlFor={'email'}>Email</label>
                             <input id={'email'} placeholder={'Email'} type="email" name="email" />
                         </p>
                         <p>
-                            <label className={contactStyles.labels} htmlFor={'subject'}>Subject</label>
+                            <label htmlFor={'subject'}>Subject</label>
                             <input id={'subject'} placeholder={'Subject'} type="text" name="subject" />
                         </p>
                         <p>
-                            <label className={contactStyles.labels} htmlFor={'message'}>Message</label>
+                            <label htmlFor={'message'}>Message</label>
                             <textarea id={'message'} placeholder={'Message'} name="message" />
                         </p>
                         <p>

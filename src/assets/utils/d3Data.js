@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 
-export default (gitArray) => {
+const populateGraph = (gitArray) => {
     const margin = {top: 10, right: 30, bottom: 40, left: 100},
         width = 960 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
@@ -75,3 +75,4 @@ export default (gitArray) => {
         .attr("stroke", "black")
 }
 
+export default populateGraph;

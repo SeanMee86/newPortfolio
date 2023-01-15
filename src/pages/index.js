@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 
-import SEO from "../components/seo/seo"
+import Seo from "../components/seo/seo"
 import HeroSection from "../components/sections/hero-section/hero-section";
 import Layout from "../components/layouts/layout/layout";
 import AboutSection from "../components/sections/about-section/about-section";
@@ -14,7 +14,7 @@ class IndexPage extends Component{
     render() {
         return (
             <Layout>
-                <SEO title="Home"/>
+                <Seo title="Home"/>
                 <SectionLayout anchorTag={'home'} isHome={true}>
                     <HeroSection/>
                 </SectionLayout>

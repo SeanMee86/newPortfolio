@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import indexStyles from "./heroSection.module.scss";
+import * as indexStyles from "./heroSection.module.scss";
 import profilePic from "../../../assets/images/sean-mee.jpg";
 import TypeOut from "../../typewriter";
 
