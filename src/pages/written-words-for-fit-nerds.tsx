@@ -13,14 +13,15 @@ const WWFNPage: React.FunctionComponent<IWWFNPageProps> = (props) => {
         margin: "auto"
     }}>
         <header style={{textAlign: "center", padding: "0 40px"}}>
-            <img src={logo.default} alt="" style={{maxWidth: "400px"}} />
+            <img src={logo.default} alt="" style={{maxWidth: "400px", width: "100%"}} />
         </header>
         <hr />
         First Book:
         <img src={conan.default} alt="" style={{
             maxWidth: "450px",
             margin: "20px auto",
-            display: "block"
+            display: "block",
+            width: "100%"
         }} />
 
         
