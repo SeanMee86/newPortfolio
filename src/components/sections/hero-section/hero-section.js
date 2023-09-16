@@ -9,9 +9,9 @@ class HeroSection extends Component {
             <div className={indexStyles.container}>
                 <img className={indexStyles.portrait} src={profilePic} alt="Photograph of Web Developer Sean Mee"/>
                 <TypeOut delay={50} textHeight={'150px'}>
-                    <p>My name is Sean Mee</p>
-                    <p>I am a Full Stack Web Developer</p>
-                    <p>Living in Southern California</p>
+                    <p>My name is Sean Mee </p>
+                    <p>I am a Full Stack Web Developer </p>
+                    <p>Living in Southern California </p>
                     <p>Specializing in JavaScript</p>
                 </TypeOut>
                 {/*<div className={indexStyles.backdrop}/>*/}

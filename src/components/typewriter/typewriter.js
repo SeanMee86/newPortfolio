@@ -11,7 +11,7 @@ class TypeWriter{
         this.charsArray = this.linesArray.map(line => line.split(''));
 
         this.textObj = {};
-        this.charsArray.forEach((line, ind) => this.textObj[`line${ind+1}`] = '');
+        this.charsArray.forEach((_, ind) => this.textObj[`line${ind+1}`] = '');
         [this.text, this.setText] = updateState(this.textObj);
     }
 
@@ -43,7 +43,7 @@ class TypeWriter{
 
     typeLines(){
         return this.charsArray
-            .map((line,ind) => {
+            .map((_, ind) => {
                 const CustomTag = `${this.array[ind].type ? this.array[ind].type : 'p'}`;
                 return (
                     <CustomTag key={ind}>{this.printText()[`line${ind+1}`]}</CustomTag>
